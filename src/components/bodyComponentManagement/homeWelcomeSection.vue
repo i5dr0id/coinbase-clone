@@ -44,7 +44,6 @@ export default {};
 
 .home-welcome-main-flex {
   display: flex;
-  -webkit-box-align: center;
   align-items: center;
   flex-direction: column;
   text-align: center;

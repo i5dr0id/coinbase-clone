@@ -105,7 +105,7 @@ export default {};
   line-height: 48px;
   font-size: 40px;
   color: rgb(15, 50, 86);
-  font-weight: 500;
+  font-weight: bold;
   margin: 0px;
 }
 .instruction-section-text-sub {

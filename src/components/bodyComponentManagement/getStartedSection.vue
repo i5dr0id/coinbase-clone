@@ -37,9 +37,7 @@ export default {};
 .getstarted-section-flex-row {
   display: flex;
   width: 100%;
-  -webkit-box-align: center;
   align-items: center;
-  -webkit-box-pack: justify;
   justify-content: space-between;
   flex-flow: row;
   padding: 100px 0px;
@@ -104,6 +102,19 @@ input {
   pointer-events: none;
   font-family: Graphik, sans-serif;
   font-weight: 500;
+}
+@media (max-width: 992px) {
+
+.getstarted-section-flex-row {
+      flex-flow: column;
+    padding: 76px 0px;
+}
+
+.getstarted-section-text {
+      font-size: 32px;
+    text-align: center;
+    padding-bottom: 88px;
+}
 }
 </style>
 

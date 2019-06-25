@@ -38,6 +38,8 @@ export default {
 hr {
   margin: 0;
   padding: 0;
+  /* height: 1px !important; */
+  color: rgb(238, 238, 238);
 }
 </style>
 

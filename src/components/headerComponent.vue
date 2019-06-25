@@ -23,16 +23,23 @@
           <div class="navigation-dropdown">
             <div class="navigation-dropdown-menu">
               <span class="dropdown-menu">Products</span>
+              <span class="dropdown-caret-icon">></span>
             </div>
           </div>
           <div class="navigation-price">Prices</div>
-          <div class="navigation-company">
+          <div class="navigation-dropdown-menu navigation-company">
             <span class="link-company">Company</span>
+            <span class="company-dropdown-caret-icon">></span>
+            <!-- <div class="company-drop-down-content">
+              <a href="#">About Us</a>
+              <a href="#">Blog</a>
+              <a href="#">Support</a>
+            </div>-->
           </div>
         </div>
         <div class="header-menu">
           <div class="link-signin">
-            <router-link class="link-signin-router" to="/signin">
+            <router-link class="link-signin-router" to="#">
               <a>Sign in</a>
             </router-link>
           </div>
@@ -48,7 +55,60 @@
 </template>
 
 <script>
-export default {};
+export default {
+  data() {
+    return {
+      scrollPosition: null
+    };
+  },
+  methods: {
+    updateScroll(event) {
+      this.scrollPosition = window.scrollY;
+      console.log("SCROLLPOSITION: ", this.scrollPosition);
+      console.log("EVENT: ", event);
+      let header = document.querySelector(".header");
+      let logo = document.querySelector(".header-navigation-logo");
+      let _textPrice = document.querySelector(".navigation-price");
+      let caret = document.querySelector(".dropdown-caret-icon");
+      let com_caret = document.querySelector(".company-dropdown-caret-icon");
+      let link_company = document.querySelector(".link-company");
+      let drop_down = document.querySelector(".dropdown-menu");
+      let link_signin_router = document.querySelector(".link-signin-router");
+      let btn_getstarted = document.querySelector(".btn-get-started");
+
+      if (
+        this.scrollPosition > 100 &&
+        !header.className.includes("header--static")
+      ) {
+        header.classList.add("header--fixed");
+        logo.classList.add("header-navigation-logo--blue");
+        _textPrice.classList.add("navigation-price--black");
+        caret.classList.add("dropdown-caret-icon--black");
+        link_company.classList.add("link-company--black");
+        drop_down.classList.add("dropdown-menu--black");
+        link_signin_router.classList.add("link-signin-router--black");
+        btn_getstarted.classList.add("btn-get-started--green");
+        com_caret.classList.add("company-dropdown-caret-icon--black")
+      } else if (this.scrollPosition < 100) {
+        header.classList.remove("header--fixed");
+        logo.classList.remove("header-navigation-logo--blue");
+        _textPrice.classList.remove("navigation-price--black");
+        caret.classList.remove("dropdown-caret-icon--black");
+        link_company.classList.remove("link-company--black");
+        drop_down.classList.remove("dropdown-menu--black");
+        link_signin_router.classList.remove("link-signin-router--black");
+        btn_getstarted.classList.remove("btn-get-started--green");
+        com_caret.classList.remove("company-dropdown-caret-icon--black")
+      }
+    }
+  },
+  mounted() {
+    window.addEventListener("scroll", this.updateScroll);
+  }
+  //   destroy() {
+  //   window.removeEventListener('scroll', this.updateScroll)
+  // }
+};
 </script>
 
 <style scoped>
@@ -56,20 +116,41 @@ export default {};
   min-height: 26px;
   width: 100%;
   box-shadow: rgba(75, 86, 99, 0.094) 0px 8px 16px;
-  /* position: fixed; */
+  position: static;
   left: 0px;
   right: 0px;
   top: 0px;
   z-index: 4;
-  background: rgb(255, 255, 255);
   transition: top 0.3s ease 0s;
+}
 
-  /* display: flex;
-  flex-direction: row;
+.header {
+  background-color: rgb(22, 82, 240);
+}
+.header--static {
+  min-height: 26px;
   width: 100%;
-  max-width: 1180px;
-  margin: 0px auto;
-  padding: 24px; */
+  box-shadow: none;
+  position: static;
+  left: 0px;
+  right: 0px;
+  top: -104px;
+  z-index: 4;
+  background: transparent;
+  transition: top 0.3s ease 0s;
+}
+
+.header--fixed {
+  min-height: 26px;
+  width: 100%;
+  box-shadow: rgba(75, 86, 99, 0.094) 0px 8px 16px;
+  position: fixed;
+  left: 0px;
+  right: 0px;
+  top: 0px;
+  z-index: 4;
+  background: #ffffff;
+  transition: top 0.3s ease 0s;
 }
 .header-navbar {
   display: flex;
@@ -81,7 +162,9 @@ export default {};
   padding-left: 0%;
   padding-right: 0%;
 }
-
+.link_signin_router--black {
+  color: #000000;
+}
 .header-navbar-flex {
   display: flex;
   justify-content: space-between;
@@ -127,7 +210,7 @@ export default {};
   padding: 5px 15px;
 }
 .dropdown-menu {
-  color: rgb(255, 255, 255);
+  color: #ffffff;
   position: relative;
   cursor: pointer;
   font-size: 14px;
@@ -135,6 +218,9 @@ export default {};
   text-decoration: none;
   transition: all 150ms ease 0s;
   font-weight: bold;
+}
+.dropdown-menu--black {
+  color: #000000;
 }
 .navigation-dropdown-product {
   display: flex;
@@ -155,6 +241,9 @@ export default {};
   font-weight: bold;
   color: #ffffff;
 }
+.navigation-price--black {
+  color: rgb(5, 15, 25);
+}
 .navigation-company {
   font-size: 14px;
   line-height: 16px;
@@ -169,6 +258,9 @@ export default {};
   transition: all 150ms ease 0s;
   font-weight: bold;
 }
+.link-company--black {
+  color: #000000;
+}
 .navigation-menu {
   display: flex;
   justify-content: flex-end;
@@ -178,7 +270,6 @@ export default {};
 .link-signin {
   /* flex-direction: row;
   display: flex;
-  -webkit-box-align: center;
   align-items: center;
   font-size: 16px;
   font-weight: 500;
@@ -186,7 +277,6 @@ export default {};
   color: #ffffff; */
   flex-direction: row;
   display: flex;
-  -webkit-box-align: center;
   align-items: center;
   font-size: 16px;
   font-weight: 500;
@@ -200,7 +290,7 @@ export default {};
 .btn-get-started {
   position: relative;
   width: auto;
-  color: rgb(255, 255, 255);
+  color: #ffffff;
   cursor: pointer;
   font-size: 14px;
   background-color: transparent;
@@ -210,8 +300,13 @@ export default {};
   padding: 12px 16px;
   border-width: 1px;
   border-style: solid;
-  border-color: rgb(255, 255, 255);
-  border-image: initial;
+  border-color: #ffffff;
+}
+
+.btn-get-started--green {
+  color: #ffffff;
+  border-color: #05b169;
+  background-color: #05b169;
 }
 .button-span {
   display: flex;
@@ -221,13 +316,15 @@ export default {};
   pointer-events: none;
   font-weight: 500;
 }
-.header {
-  background-color: rgb(22, 82, 240);
-}
+
 .header-navigation-logo {
   height: 26px;
-  fill: rgb(255, 255, 255);
+  fill: #ffffff;
   position: relative;
+}
+
+.header-navigation-logo--blue {
+  fill: rgb(22, 82, 240);
 }
 .link-signin-router {
   flex-direction: row;
@@ -241,6 +338,55 @@ export default {};
   text-decoration: none;
   font-size: 14px;
   line-height: 16px;
+}
+.link-signin-router--black {
+  color: #000000;
+}
+
+.dropdown-caret-icon {
+  transform: rotate(90deg);
+  color: #ffffff;
+  padding: 0px 5px;
+}
+.company-dropdown-caret-icon {
+  transform: rotate(90deg);
+  color: #ffffff;
+  padding: 0px 5px;
+}
+.dropdown-caret-icon--black {
+  color: #000000;
+}
+
+.company-dropdown-caret-icon--black {
+  color: #000000;
+}
+.company-drop-down-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  margin-top: 80px;
+}
+
+.company-drop-down-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.company-drop-down-content a:hover {
+  background-color: #ddd;
+}
+
+.navigation-company:hover .company-drop-down-content {
+  display: block;
+}
+
+.navigation-company:hover .dropbtn {
+  background-color: #3e8e41;
 }
 </style>
 

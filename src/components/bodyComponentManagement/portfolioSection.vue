@@ -124,8 +124,11 @@
               <div class="overview-info-text-sub">
                 <span>
                   Stay on top of the markets with the Coinbase app for
-                  <a href="#">Android</a> or
-                  <a href="#">iOS</a>.
+                  <a
+                    href="#"
+                    style="text-decoration: none; color:#0667d0"
+                  >Android</a> or
+                  <a href="#" style="text-decoration: none; color:#0667d0">iOS</a>.
                 </span>
               </div>
             </div>
@@ -193,7 +196,7 @@ export default {
 }
 .portfolio-main-title {
   font-size: 40px;
-  font-weight: 500;
+  font-weight: bold;
   color: rgb(15, 50, 86);
   text-align: center;
   margin: 0px 0px 10px;
@@ -209,6 +212,14 @@ export default {
   width: 100%;
   justify-content: space-between;
   margin-top: 60px;
+}
+
+@media (max-width: 1170px) {
+  .portfolio-features {
+    margin-top: 30px !important;
+    flex-direction: column-reverse !important;
+    align-items: center !important;
+  }
 }
 .portfolio-feature-overview {
   display: flex;

@@ -3,16 +3,16 @@
     <div class="stripe-section-flex">
       <div class="stripe-section-stats">
         <div class="stripe-stats-text">
-          <h1 class="stripe-stat-text-title">$150B+</h1>
-          <span class="stripe-stat-text-sub">Cryptocurrency exchanged</span>
+          <h1 class="stripe-stats-text-title">$150B+</h1>
+          <span class="stripe-stats-text-sub">Cryptocurrency exchanged</span>
         </div>
         <div class="stripe-stats-text">
-          <h1 class="stripe-stat-text-title">42</h1>
-          <span class="stripe-stat-text-sub">Countries supported</span>
+          <h1 class="stripe-stats-text-title">42</h1>
+          <span class="stripe-stats-text-sub">Countries supported</span>
         </div>
         <div class="stripe-stats-text">
-          <h1 class="stripe-stat-text-title">20M+</h1>
-          <span class="stripe-stat-text-sub">Customers served</span>
+          <h1 class="stripe-stats-text-title">20M+</h1>
+          <span class="stripe-stats-text-sub">Customers served</span>
         </div>
       </div>
     </div>
@@ -51,7 +51,7 @@ export default {};
 .stripe-stats-text-title {
   line-height: 48px;
   font-size: 56px;
-  font-weight: 500;
+  font-weight: bold;
   margin: 0px 0px 12px;
 }
 .stripe-stats-text-sub {

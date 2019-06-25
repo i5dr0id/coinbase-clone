@@ -23,9 +23,11 @@
                 fill="#fff"
               ></path>
             </svg>
-            <h2>Secure storage</h2>
-            <p>We store the vast majority of the digital assets in secure offline storage.</p>
-            <a href="#" class="Features__FeatureLink-xbf2yc-7 kFELyp">
+            <h2 class="value-section-text">Secure storage</h2>
+            <p
+              class="value-section-sub"
+            >We store the vast majority of the digital assets in secure offline storage.</p>
+            <a href="#" class="value-section-link">
               Learn more
               <svg
                 width="5"
@@ -54,9 +56,11 @@
                 fill="#fff"
               ></path>
             </svg>
-            <h2>Protected by insurance</h2>
-            <p>Cryptocurrency stored on our servers is covered by our insurance policy.</p>
-            <a href="#" class="Features__FeatureLink-xbf2yc-7 kFELyp">
+            <h2 class="value-section-text">Protected by insurance</h2>
+            <p
+              class="value-section-sub"
+            >Cryptocurrency stored on our servers is covered by our insurance policy.</p>
+            <a href="#" class="value-section-link">
               Learn more
               <svg
                 width="5"
@@ -102,9 +106,11 @@
                 ></path>
               </svg>
             </svg>
-            <h2>Industry best practices</h2>
-            <p>Coinbase supports a variety of the most popular digital currencies.</p>
-            <a href="#" class="Features__FeatureLink-xbf2yc-7 kFELyp">
+            <h2 class="value-section-text">Industry best practices</h2>
+            <p
+              class="value-section-sub"
+            >Coinbase supports a variety of the most popular digital currencies.</p>
+            <a href="#" class="value-section-link">
               Learn more
               <svg width="5" height="9" viewBox="0 0 8 11" fill="none" xmlns="#">
                 <path d="M1 10l5-4.5L1 1" stroke="#1652F0" stroke-width="2"></path>
@@ -163,6 +169,27 @@ export default {};
   align-items: center;
   text-align: center;
   padding: 0px 24px;
+}
+.value-section-text {
+  margin-top: 72px;
+  margin-bottom: 14px;
+  font-size: 20px;
+  font-weight: bold;
+  color: rgb(0, 47, 107);
+}
+
+.value-section-sub {
+  color: rgb(144, 161, 184);
+  line-height: 24px;
+  font-size: 16px;
+  margin: 14px 0px 23px;
+}
+.value-section-link {
+  line-height: 28px;
+  font-size: 14px;
+  color: rgb(22, 82, 240);
+  font-weight: bold;
+  text-decoration: none;
 }
 </style>
 

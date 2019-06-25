@@ -137,6 +137,7 @@ export default {};
   flex-direction: row;
   width: 100%;
   background: #ffffff;
+  padding: 0 24px;
 }
 
 
