@@ -19,34 +19,55 @@
             </svg>
           </div>
         </div>
-        <div class="header-navigations">
-          <div class="navigation-dropdown">
-            <div class="navigation-dropdown-menu">
-              <span class="dropdown-menu">Products</span>
-              <span class="dropdown-caret-icon">></span>
+        <div class="topnav">
+          <div></div>
+          <div class="header-navigations">
+            <div class="navigation-dropdown">
+              <div class="navigation-dropdown-menu">
+                <span class="dropdown-menu">Products</span>
+                <span class="dropdown-caret-icon">></span>
+              </div>
+            </div>
+            <div class="navigation-price">Prices</div>
+            <div class="navigation-dropdown-menu navigation-company">
+              <span class="link-company">Company</span>
+              <span class="company-dropdown-caret-icon">></span>
             </div>
           </div>
-          <div class="navigation-price">Prices</div>
-          <div class="navigation-dropdown-menu navigation-company">
-            <span class="link-company">Company</span>
-            <span class="company-dropdown-caret-icon">></span>
-            <!-- <div class="company-drop-down-content">
-              <a href="#">About Us</a>
-              <a href="#">Blog</a>
-              <a href="#">Support</a>
-            </div>-->
+          <div class="header-menu">
+            <div class="link-signin">
+              <router-link class="link-signin-router" to="#">
+                <a>Sign in</a>
+              </router-link>
+            </div>
+            <div class="link-signup">
+              <button type="outlineWhite" class="btn-get-started">
+                <span class="button-span">Get started</span>
+              </button>
+            </div>
           </div>
-        </div>
-        <div class="header-menu">
-          <div class="link-signin">
-            <router-link class="link-signin-router" to="#">
-              <a>Sign in</a>
-            </router-link>
-          </div>
-          <div class="link-signup">
-            <button type="outlineWhite" class="btn-get-started">
-              <span class="button-span">Get started</span>
-            </button>
+          <div class="bars">
+            <div class="">
+              <div class="">
+                <svg
+                  type="light"
+                  class=""
+                  style="fill:#ffffff"
+                  width="18"
+                  height="16"
+                  viewBox="0 0 18 16"
+                  xmlns="http://www.w3.org/2000/svg"
+                  xmlns:xlink="http://www.w3.org/1999/xlink"
+                >
+                  <use xlink:href="#a" transform="translate(0 1)"></use>
+                  <use xlink:href="#a" transform="translate(0 8)"></use>
+                  <use xlink:href="#a" transform="translate(0 15)"></use>
+                  <defs>
+                    <path id="a" d="M0 1h18v-2H0v2z"></path>
+                  </defs>
+                </svg>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -88,7 +109,7 @@ export default {
         drop_down.classList.add("dropdown-menu--black");
         link_signin_router.classList.add("link-signin-router--black");
         btn_getstarted.classList.add("btn-get-started--green");
-        com_caret.classList.add("company-dropdown-caret-icon--black")
+        com_caret.classList.add("company-dropdown-caret-icon--black");
       } else if (this.scrollPosition < 100) {
         header.classList.remove("header--fixed");
         logo.classList.remove("header-navigation-logo--blue");
@@ -98,7 +119,7 @@ export default {
         drop_down.classList.remove("dropdown-menu--black");
         link_signin_router.classList.remove("link-signin-router--black");
         btn_getstarted.classList.remove("btn-get-started--green");
-        com_caret.classList.remove("company-dropdown-caret-icon--black")
+        com_caret.classList.remove("company-dropdown-caret-icon--black");
       }
     }
   },
@@ -167,11 +188,23 @@ export default {
 }
 .header-navbar-flex {
   display: flex;
-  justify-content: space-between;
+  /* justify-content: space-between; */
   flex-direction: row;
   flex: 1 1 auto;
   padding: 0px 20px;
 }
+.topnav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex: 1 1 auto;
+  padding: 0px 20px;
+}
+.topnav {
+  overflow: hidden;
+  /* background-color: #333; */
+}
+
 .header-logo {
   display: flex;
   justify-content: flex-start;
@@ -387,6 +420,32 @@ export default {
 
 .navigation-company:hover .dropbtn {
   background-color: #3e8e41;
+}
+
+/* @media screen and (max-width: 600px) {
+  .topnav > div {
+    display: none;
+  }
+  .topnav > div {
+    float: right;
+    display: block;
+  }
+} */
+.topnav > .bars {
+  display: none;
+}
+
+@media (max-width: 750px) {
+  .topnav > div {
+    display: none;
+  }
+  .topnav > .bars {
+    display: block !important;
+    float: right !important;
+  }
+  .topnav {
+    justify-content: flex-end;
+  }
 }
 </style>
 

@@ -128,10 +128,23 @@ export default {};
   }
 
   .home-welcome-main-flex {
-        text-align: center !important;
+    text-align: center !important;
   }
   .home-welcome-main {
     /* padding: 50px 24px 113px !important; */
+  }
+
+  /* margin-right: 10px;
+    margin-left: 10px; */
+  .home-main-form input {
+    margin-right: 20px;
+    margin-left: 20px;
+  }
+
+  .home-main-form button {
+    margin-right: 20px;
+    margin-left: 20px;
+    margin-top: 10px;
   }
 }
 </style>
