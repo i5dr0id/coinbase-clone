@@ -151,11 +151,13 @@ export default {};
   font-size: 40px;
   color: rgb(15, 50, 86);
   font-weight: bold;
+  text-align: center;
 }
 .value-section-text-sub {
   font-size: 18px;
   color: rgb(144, 161, 184);
   margin: 0px;
+  text-align: center;
 }
 .value-section-features {
   display: flex;

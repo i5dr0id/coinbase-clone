@@ -181,10 +181,11 @@ export default {
 .portfolio-section {
   display: flex;
   flex-direction: row;
-  width: 100%;
-  max-width: 1180px;
+  /* width: 100%; */
+  /* max-width: 1180px; */
   margin: 0px auto;
-  /* padding: 24px; */
+  padding: 24px;
+  justify-content: center;
 }
 .portfolio-section-flex {
   display: flex;
@@ -193,6 +194,8 @@ export default {
   margin-top: 30px;
   margin-bottom: 60px;
   flex: 1 1 auto;
+  width: 100%;
+  max-width: 1180px;
 }
 .portfolio-main-title {
   font-size: 40px;
@@ -220,7 +223,10 @@ export default {
     flex-direction: column-reverse !important;
     align-items: center !important;
   }
+
 }
+
+
 .portfolio-feature-overview {
   display: flex;
   flex-direction: column;
@@ -255,7 +261,7 @@ export default {
   margin-top: 0px;
   margin-bottom: 12px;
   font-size: 20px;
-  font-weight: 500;
+  font-weight: bold;
 }
 .overview-info-text-sub {
   line-height: 1.6;
@@ -267,6 +273,16 @@ export default {
 }
 .feature-image-width {
   width: 700px;
+}
+
+.feature-image-width img {
+  width: 100%;
+}
+
+@media (max-width: 560px) {
+.feature-image-width {
+  width: 400px;
+}
 }
 </style>
 

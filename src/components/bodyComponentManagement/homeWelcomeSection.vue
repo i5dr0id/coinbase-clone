@@ -112,10 +112,27 @@ export default {};
   justify-content: center;
   width: 100%;
   pointer-events: none;
-  font-family: Graphik, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-    Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
+  font-family: Graphik, sans-serif;
   font-weight: bold;
+}
+
+@media (max-width: 560px) {
+  .home-main-form {
+    width: 100% !important;
+    flex-direction: column !important;
+  }
+
+  .home-welcome-main {
+    /* margin: 0px !important; */
+    /* padding: 13px 16px 15px !important; */
+  }
+
+  .home-welcome-main-flex {
+        text-align: center !important;
+  }
+  .home-welcome-main {
+    /* padding: 50px 24px 113px !important; */
+  }
 }
 </style>
 
